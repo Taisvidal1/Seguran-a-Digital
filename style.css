@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senha Mini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="card">
+        <h2>Gerador de Senha</h2>
+        
+        <div class="campo-resultado">
+            <input type="text" id="senha" readonly placeholder="Sua senha aparecerá aqui">
+            <button id="copiar">Copiar</button>
+        </div>
+
+        <div class="opcoes">
+            <label for="tamanho">Tamanho: <span id="valor-tamanho">12</span></label>
+            <input type="range" id="tamanho" min="6" max="30" value="12">
+        </div>
+
+        <button id="gerar" class="btn-principal">Gerar Senha</button>
+    </main>
+</body>
+</html>
