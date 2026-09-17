@@ -1,26 +1,119 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senha Mini</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="card">
-        <h2>Gerador de Senha</h2>
-        
-        <div class="campo-resultado">
-            <input type="text" id="senha" readonly placeholder="Sua senha aparecerá aqui">
-            <button id="copiar">Copiar</button>
-        </div>
+:root {
+    --primary-color: #2b5876;
+    --secondary-color: #4e4376;
+    --accent-color: #00d2ff;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+}
 
-        <div class="opcoes">
-            <label for="tamanho">Tamanho: <span id="valor-tamanho">12</span></label>
-            <input type="range" id="tamanho" min="6" max="30" value="12">
-        </div>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        <button id="gerar" class="btn-principal">Gerar Senha</button>
-    </main>
-</body>
-</html>
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.result-card {
+    margin-top: 25px;
+    background-color: #eef9ff;
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
+    border-radius: 4px;
+    display: none; /* Oculto até o cálculo ser feito */
+}
+
+.result-card h2 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.result-card p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
